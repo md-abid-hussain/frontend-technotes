@@ -18,7 +18,6 @@ export const notesApiSlice = apiSlice.injectEndpoints({
             validateStatus:(response,result)=>{
                 return response.status === 200 && !result.isError
             },
-            keepUnusedDataFor:5,
             transformResponse:responseData=>{
                 return notesAdapter.setAll(initialState,responseData)
             },
