@@ -7,8 +7,9 @@ import NotesList from './Features/Notes/NotesList'
 import UsersList from './Features/Users/UsersList'
 import NewUserForm from './Features/Users/NewUserForm'
 import EditUser from './Features/Users/EditUser'
-import NewNoteForm from './Features/Notes/NewNoteForm'
+import NewNote from './Features/Notes/NewNote'
 import EditNote from './Features/Notes/EditNote'
+import Prefetch from './Features/Auth/Prefetch'
 import {Route,Routes} from 'react-router-dom'
 
 function App() {
@@ -20,23 +21,24 @@ function App() {
         <Route index element={<Public/>}/>
 
         <Route path="login" element={<Login/>}/>
+        <Route element={<Prefetch/>}>
+          <Route path="dash" element={<DashLayout/>}>
 
-        <Route path="dash" element={<DashLayout/>}>
+            <Route index element={<Welcome/>}/>
+            
+            <Route path='users'>
+              <Route index element={<UsersList/>}/>
+              <Route path=':id' element={<EditUser/>}/>
+              <Route path='new' element={<NewUserForm/>}/>
+            </Route>
 
-          <Route index element={<Welcome/>}/>
-          
-          <Route path='users'>
-            <Route index element={<UsersList/>}/>
-            <Route path=':id' element={<EditUser/>}/>
-            <Route path='new' element={<NewUserForm/>}/>
+            <Route path='notes'>
+              <Route index element={<NotesList/>}/>
+              <Route path=':id' element={<EditNote/>}/>
+              <Route path='new' element={<NewNote/>}/>
+            </Route>
+            
           </Route>
-
-          <Route path='notes'>
-            <Route index element={<NotesList/>}/>
-            <Route path=':id' element={<EditNote/>}/>
-            <Route path='new' element={<NewNoteForm/>}/>
-          </Route>
-          
         </Route>
       </Route>
     </Routes>
