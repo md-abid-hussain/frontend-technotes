@@ -11,10 +11,18 @@ li{
     list-style: none;
 }
 
-button{
+button,input{
     font:inherit;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 0.25rem;
+}
+
+button{
     cursor: pointer;
+}
+
+button:disabled{
+    cursor:not-allowed;
+    color:rgb(31, 31, 31);
 }
 
 a{
@@ -22,15 +30,15 @@ a{
 }
 
 a{
-    color:rgb(192, 192, 192)
+    color:rgb(231, 231, 231)
 }
 
 a:visited{
-    color:rgb(170, 170, 170)
+    color:rgb(226, 226, 226)
 }
 
 a:hover{
-    color:rgb(255, 255, 255);
+    color:rgb(134, 206, 255);
     text-decoration:dotted;
 }
 
@@ -101,6 +109,22 @@ section{
     padding:1rem;
 }
 
+.grid{
+    display: grid;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.center{
+    place-content: center;
+}
+
+.overlay{
+    background-color: #00000043;
+}
 
 thead,tbody,tr{
     display: contents;
@@ -141,4 +165,72 @@ thead,tbody,tr{
 .table_button{
     background-color: transparent;
     border: none;
+}
+
+/* Forms */
+.form{
+    font-size: 1rem;
+    min-width: 340px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(5, 4, 20);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.errmsg{
+    color:red;
+}
+
+.form_input-imcomplete {
+    outline: 1px solid red;
+}
+
+.form h2{
+    text-align:center;
+}
+
+.form .icon-button{
+    padding:0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+form input{
+    border-radius: 0.5rem;
+}
+
+.form label{
+    margin-block-start: 0.75rem;
+}
+
+select{
+    overflow: auto;
+}
+option{
+    padding:0.25rem;
+    scrollbar-gutter: 0;
+}
+
+.form_action-buttons{
+    margin-top: 1rem;
+    display: flex;
+}
+
+.form_action-buttons button{
+    flex: 1;
+}
+
+input[type="checkbox"]{
+    height: 1rem;
+    width: 1rem;
+}
+
+.form_checkbox-container{
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.form_container{
+    min-height: calc(100vh - 10rem);
 }
