@@ -13,7 +13,9 @@ const Welcome = () => {
             <h1>Welcome!</h1>
             <ul>
                 <li><Link to="/dash/notes"><FontAwesomeIcon icon={faArrowCircleRight}/> View TechNotes</Link></li>
+                <li><Link to="/dash/notes/new"><FontAwesomeIcon icon={faArrowCircleRight}/> Add new TechNotes</Link></li>
                 <li><Link to="/dash/users"><FontAwesomeIcon icon={faArrowCircleRight}/> View User Settings</Link></li>
+                <li><Link to="/dash/users/new"><FontAwesomeIcon icon={faArrowCircleRight}/> Add new User</Link></li>
             </ul>
         </main>
     )
