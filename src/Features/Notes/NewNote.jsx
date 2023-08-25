@@ -8,7 +8,11 @@ const NewNote = () => {
 
     const content = users? <NewNoteForm users={users}/> : <p>Loading...</p>
 
-    return content
+    return(
+        <section className="grid center form_container">
+            {content}
+        </section>
+    )
 }
 
 export default NewNote
