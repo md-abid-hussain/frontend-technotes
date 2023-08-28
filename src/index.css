@@ -11,9 +11,13 @@ li{
     list-style: none;
 }
 
-button,input{
+button,input,select,textarea{
     font:inherit;
-    padding: 0.25rem 0.25rem;
+    padding: 0.25rem 0.35rem;
+}
+
+textarea{
+    height: 150px;
 }
 
 button{
@@ -49,8 +53,6 @@ html{
     background-attachment: fixed;
 }
 
-
-
 body{
     font-family: 'Barlow', sans-serif;
     min-height: 100vh;
@@ -59,7 +61,6 @@ body{
     color: azure;
     line-height: 1.5;
 }
-
 
 h1{
     font-size: 2.5rem;
@@ -96,6 +97,9 @@ main{
     line-height: 1.5;
 }
 
+.nowrap{
+    white-space: nowrap;
+}
 
 .px-1{
     padding-inline:1rem;
@@ -179,7 +183,15 @@ thead,tbody,tr{
 }
 
 .errmsg{
-    color:red;
+    color:rgb(152, 0, 0);
+    padding: 0.25rem 0.5rem;
+    margin-block:0.5rem;
+    border-radius: 0.25rem;
+    background-color:rgb(7, 6, 18);
+}
+
+.errmsg span{
+    margin-left: 0.25rem;
 }
 
 .form_input-imcomplete {
@@ -196,7 +208,7 @@ thead,tbody,tr{
 }
 
 form input{
-    border-radius: 0.5rem;
+    border-radius: 0.35rem;
 }
 
 .form label{
