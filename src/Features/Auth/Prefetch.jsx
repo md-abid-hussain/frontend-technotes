@@ -1,4 +1,4 @@
-import { store } from '../../App/store'
+import { store } from '../../app/store'
 import { notesApiSlice } from '../Notes/notesApiSlice'
 import { usersApiSlice } from '../Users/usersApiSlice'
 import { useEffect } from 'react'
