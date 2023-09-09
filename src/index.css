@@ -24,6 +24,10 @@ button{
     cursor: pointer;
 }
 
+form button{
+    margin-top:1.5rem;
+}
+
 button:disabled{
     cursor:not-allowed;
     color:rgb(31, 31, 31);
@@ -44,6 +48,20 @@ a:visited{
 a:hover{
     color:rgb(134, 206, 255);
     text-decoration:dotted;
+}
+
+#root,.public{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+div{
+    flex:1
+}
+
+main{
+    flex:1
 }
 
 html{
@@ -68,9 +86,6 @@ h1{
 
 footer{
     border-top: 2px solid;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     display: flex;
     gap:1rem;
     align-items: center;
@@ -78,6 +93,17 @@ footer{
 
 header{
     border-bottom: 2px solid;
+}
+
+.dash-header_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dash-header_nav{
+    display: flex;
+    gap:0.5rem;
 }
 
 .dash-header_title{
@@ -90,6 +116,10 @@ header,footer{
 
 main{
     padding: 1rem;
+}
+
+.public{
+    padding: 0;
 }
 
 .public-main{
@@ -128,6 +158,14 @@ section{
 
 .overlay{
     background-color: #00000043;
+}
+
+.note_status-completed{
+    color:green;
+}
+
+.note_status-open{
+    color:red;
 }
 
 thead,tbody,tr{
@@ -187,7 +225,9 @@ thead,tbody,tr{
     padding: 0.25rem 0.5rem;
     margin-block:0.5rem;
     border-radius: 0.25rem;
-    background-color:rgb(7, 6, 18);
+    background-color:rgb(184, 182, 201);
+    width: fit-content;
+    margin-inline: auto;
 }
 
 .errmsg span{
@@ -195,7 +235,7 @@ thead,tbody,tr{
 }
 
 .form_input-imcomplete {
-    outline: 1px solid red;
+    border: 1px solid red;
 }
 
 .form h2{
@@ -204,7 +244,6 @@ thead,tbody,tr{
 
 .form .icon-button{
     padding:0.25rem;
-    margin-bottom: 0.5rem;
 }
 
 form input{
@@ -213,6 +252,9 @@ form input{
 
 .form label{
     margin-block-start: 0.75rem;
+}
+.form_label{
+    margin-bottom:0.5rem
 }
 
 select{
@@ -224,7 +266,6 @@ option{
 }
 
 .form_action-buttons{
-    margin-top: 1rem;
     display: flex;
 }
 
@@ -241,8 +282,4 @@ input[type="checkbox"]{
     display: flex;
     align-items: center;
     gap: 0.45rem;
-}
-
-.form_container{
-    min-height: calc(100vh - 10rem);
 }
