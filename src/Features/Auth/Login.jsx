@@ -7,6 +7,8 @@ import { useLoginMutation } from './authApiSlice'
 
 import usePersist from '../../hooks/usePersist'
 
+import  PulseLoader  from "react-spinners/PulseLoader"
+
 const Login = () => {
     const userRef = useRef()
     const errRef = useRef()
@@ -33,14 +35,13 @@ const Login = () => {
     const errClass = errMsg? "errmsg":"offscreen"
 
     if (isLoading){
-      return <p>Loading...</p>
+      return <PulseLoader color='#FFF'/>
     }
 
     const handleSubmit = async (e)=>{
       e.preventDefault()
       try{
         const {accessToken} = await login({username, password}).unwrap()
-        console.log(accessToken)
         dispatch(setCredentials({accessToken}))
         setUsername('')
         setPassword('')
