@@ -2,8 +2,11 @@ import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons"
 import useAuth from "../../hooks/useAuth"
+import useTitle from '../../hooks/useTitle'
 
 const Welcome = () => {
+
+    useTitle('Dashboard')
 
     const {username, isAdmin, isManager } = useAuth()
 
