@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { useSendLogoutMutation } from "../Features/Auth/authApiSlice"
 import useAuth from '../hooks/useAuth'
+import  PulseLoader  from "react-spinners/PulseLoader"
 
 const DASH_REGEX = /^\/dash(\/)?$/
 const NOTES_REGEX = /^\/dash\/notes(\/)?$/
@@ -21,9 +22,6 @@ const DashHeader = () => {
 
     const navigate = useNavigate()
     const {pathname}=useLocation()
-
-    console.log(pathname)
-    console.log(NOTES_REGEX.test(pathname))
 
     const [sendLogout,{
         isLoading,
@@ -121,7 +119,7 @@ const DashHeader = () => {
 
     let buttonContent
     if(isLoading){
-        buttonContent = <p>Loading...</p>
+        buttonContent = <PulseLoader color="#fff"/>
     }else{
         buttonContent = (
             <>
